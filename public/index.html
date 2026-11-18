@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FULL SOCCER | San Francisco de Pinsha</title>
+  <meta name="description" content="Liga deportiva comunitaria FULL SOCCER de San Francisco de Pinsha: posiciones, partidos, goleadores y reglamento.">
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="marca" href="#inicio">
+        <img src="/img/logo.png" alt="Logo FULL SOCCER">
+        <span><b>FULL SOCCER</b><small id="lugar-header">San Francisco de Pinsha</small></span>
+      </a>
+      <button class="btn btn-sm menu-btn" id="menu-btn" aria-label="Abrir menú">☰ Menú</button>
+      <nav class="nav" id="nav">
+        <a href="#inicio" data-sec="inicio">Inicio</a>
+        <a href="#posiciones" data-sec="posiciones">Posiciones</a>
+        <a href="#partidos" data-sec="partidos">Partidos</a>
+        <a href="#goleadores" data-sec="goleadores">Goleadores</a>
+        <a href="#equipos" data-sec="equipos">Equipos</a>
+        <a href="#reglamento" data-sec="reglamento">Reglamento</a>
+        <a href="#mi-panel" data-sec="mi-panel" id="nav-mipanel" hidden>Mi panel</a>
+      </nav>
+      <div class="cuenta" id="cuenta"></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="seccion" id="sec-inicio">
+      <div class="hero">
+        <img src="/img/logo.png" alt="Escudo FULL SOCCER">
+        <div>
+          <h1 id="nombre-liga">FULL SOCCER</h1>
+          <div class="lugar" id="lugar">San Francisco de Pinsha</div>
+          <p class="muted" id="descripcion"></p>
+          <span class="badge" id="temporada"></span>
+          <div class="stats">
+            <div class="stat"><b id="st-equipos">0</b><span>Equipos</span></div>
+            <div class="stat"><b id="st-jugadores">0</b><span>Jugadores</span></div>
+            <div class="stat"><b id="st-partidos">0</b><span>Partidos jugados</span></div>
+            <div class="stat"><b id="st-goles">0</b><span>Goles</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid g2">
+        <div class="tarjeta">
+          <h2 class="titulo">Próximos partidos</h2>
+          <div id="proximos"></div>
+        </div>
+        <div class="tarjeta">
+          <h2 class="titulo">Últimos resultados</h2>
+          <div id="ultimos"></div>
+        </div>
+      </div>
+
+      <div class="grid g2 espacio-arriba">
+        <div class="tarjeta">
+          <h2 class="titulo">Top 5 posiciones</h2>
+          <div id="top-posiciones"></div>
+        </div>
+        <div class="tarjeta">
+          <h2 class="titulo">Top 5 goleadores</h2>
+          <div id="top-goleadores"></div>
+        </div>
+      </div>
+
+      <h2 class="titulo espacio-arriba">Noticias</h2>
+      <div id="noticias"></div>
+    </section>
+
+    <!-- POSICIONES -->
+    <section class="seccion" id="sec-posiciones" hidden>
+      <h2 class="titulo">Tabla de posiciones</h2>
+      <div id="tabla-posiciones"></div>
+      <p class="muted">PJ: jugados · PG: ganados · PE: empatados · PP: perdidos · GF/GC: goles a favor / en contra · DG: diferencia · PTS: puntos</p>
+    </section>
+
+    <!-- PARTIDOS -->
+    <section class="seccion" id="sec-partidos" hidden>
+      <h2 class="titulo">Calendario y resultados</h2>
+      <div class="filtros">
+        <select id="filtro-equipo" aria-label="Filtrar por equipo"><option value="">Todos los equipos</option></select>
+        <select id="filtro-estado" aria-label="Filtrar por estado">
+          <option value="">Todos</option>
+          <option value="jugado">Jugados</option>
+          <option value="programado">Programados</option>
+          <option value="suspendido">Suspendidos</option>
+        </select>
+      </div>
+      <div id="lista-partidos"></div>
+    </section>
+
+    <!-- GOLEADORES -->
+    <section class="seccion" id="sec-goleadores" hidden>
+      <h2 class="titulo">Tabla de goleadores</h2>
+      <div class="podio" id="podio"></div>
+      <div id="tabla-goleadores"></div>
+    </section>
+
+    <!-- EQUIPOS -->
+    <section class="seccion" id="sec-equipos" hidden>
+      <h2 class="titulo">Equipos y planteles</h2>
+      <div class="grid g3" id="lista-equipos"></div>
+    </section>
+
+    <!-- REGLAMENTO -->
+    <section class="seccion" id="sec-reglamento" hidden>
+      <h2 class="titulo">Reglamento del campeonato</h2>
+      <div id="lista-reglamento"></div>
+    </section>
+
+    <!-- MI PANEL (usuario registrado) -->
+    <section class="seccion" id="sec-mi-panel" hidden>
+      <h2 class="titulo">Mi panel</h2>
+      <div class="grid g2">
+        <div class="tarjeta">
+          <h3>Mi equipo favorito</h3>
+          <div class="campo">
+            <label for="fav-equipo">Elige tu equipo para seguir sus partidos</label>
+            <select id="fav-equipo"><option value="">— Ninguno —</option></select>
+          </div>
+          <div id="fav-resumen"></div>
+          <div id="fav-partidos"></div>
+        </div>
+        <div class="tarjeta">
+          <h3>Cambiar contraseña</h3>
+          <form id="form-pass" novalidate>
+            <div class="campo"><label for="pass-actual">Contraseña actual</label><input type="password" id="pass-actual" autocomplete="current-password" required maxlength="72"></div>
+            <div class="campo"><label for="pass-nueva">Nueva contraseña</label><input type="password" id="pass-nueva" autocomplete="new-password" required maxlength="72">
+              <ul class="reglas-pass" id="reglas-pass"></ul></div>
+            <button class="btn btn-primario" type="submit">Actualizar contraseña</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="pie">FULL SOCCER · San Francisco de Pinsha</div>
+    <div>Plataforma protegida con JWT, CSRF, CSP y limitación de peticiones.</div>
+  </footer>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/password-rules.js"></script>
+  <script src="/js/public.js"></script>
+</body>
+</html>

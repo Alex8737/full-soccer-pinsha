@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Panel de administración | FULL SOCCER</title>
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="marca" href="/">
+        <img src="/img/logo.png" alt="Logo FULL SOCCER">
+        <span><b>FULL SOCCER</b><small>Panel de administración</small></span>
+      </a>
+      <div class="cuenta">
+        <span class="muted" id="admin-nombre"></span>
+        <a class="btn btn-sm" href="/" target="_blank" rel="noopener">Ver sitio público ↗</a>
+        <button class="btn btn-sm" id="btn-salir" type="button">Salir</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin">
+    <aside class="side" id="menu">
+      <button type="button" data-panel="resumen" class="activo">📊 Resumen</button>
+      <button type="button" data-panel="noticias">📰 Noticias</button>
+      <button type="button" data-panel="equipos">🛡️ Equipos</button>
+      <button type="button" data-panel="jugadores">👟 Jugadores</button>
+      <button type="button" data-panel="partidos">⚽ Partidos y goles</button>
+      <button type="button" data-panel="reglamento">📜 Reglamento</button>
+      <button type="button" data-panel="config">🏟️ Información de la liga</button>
+      <button type="button" data-panel="usuarios">👥 Usuarios</button>
+      <button type="button" data-panel="bitacora">🔐 Bitácora de seguridad</button>
+    </aside>
+    <main id="panel"></main>
+  </div>
+
+  <dialog id="modal">
+    <form id="modal-form" novalidate>
+      <div class="m-cab"><h3 id="modal-titulo"></h3><button type="button" class="btn btn-sm" id="modal-x" aria-label="Cerrar">✕</button></div>
+      <div class="m-cuerpo" id="modal-cuerpo"></div>
+      <div class="m-pie" id="modal-pie">
+        <button type="button" class="btn" id="modal-cancelar">Cancelar</button>
+        <button type="submit" class="btn btn-primario" id="modal-guardar">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

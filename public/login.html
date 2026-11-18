@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingresar | FULL SOCCER</title>
+  <link rel="icon" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="auth">
+    <div class="tarjeta">
+      <a href="/"><img class="logo" src="/img/logo.png" alt="FULL SOCCER"></a>
+      <h1>Iniciar sesión</h1>
+      <p class="muted">FULL SOCCER · San Francisco de Pinsha</p>
+      <div class="alerta info" id="aviso" hidden>Inicia sesión con una cuenta de administrador para acceder al panel.</div>
+      <div class="alerta error" id="error" hidden></div>
+      <form id="form-login" novalidate>
+        <div class="campo">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" autocomplete="username" required maxlength="254">
+        </div>
+        <div class="campo">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" autocomplete="current-password" required maxlength="72">
+        </div>
+        <button class="btn btn-primario" type="submit" id="btn">Ingresar</button>
+        <a class="btn" href="/">Volver</a>
+      </form>
+      <p class="muted">¿No tienes cuenta? <a href="/registro.html">Regístrate</a></p>
+    </div>
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>
